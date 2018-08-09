@@ -1,9 +1,10 @@
 .container{
     display: flex;
-    flex-flow: column wrap; 
+    flex-flow: column wrap;
 }
 body{
     background-color: #314CB6;
+    background: http://hdwpro.com/wp-content/uploads/2017/03/Art-Background-Image.png
 }
 .name{
     justify-content: center;
@@ -12,9 +13,26 @@ body{
     color: white;
     font-size: 30px;
 }
+.quote{
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+  color: white;
+  font-size: 15px;
+}
 .search{
     justify-content: center;
     align-content: center;
     margin: auto;
 
+}
+.search input{
+  height: 30px;
+  width: 700px;
+}
+.button{
+  font-size: 19px;
+}
+.button:active{
+  transform: translateY(4px);
 }
