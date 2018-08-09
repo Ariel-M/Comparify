@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    flex-flow: column wrap; 
+}
+body{
+    background-color: #314CB6;
+}
+.name{
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    color: white;
+    font-size: 30px;
+}
+.search{
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+
+}
