@@ -1,9 +1,10 @@
 .container{
     display: flex;
-    flex-flow: column wrap; 
+    flex-flow: column wrap;
 }
 body{
     background-color: #314CB6;
+    background-image: url('watercolour-1325656_1920.jpg');
 }
 .name{
     justify-content: center;
@@ -11,10 +12,45 @@ body{
     margin: auto;
     color: white;
     font-size: 30px;
+    font-family: 'Libre Barcode 39 Extended Text', cursive;
+}
+.quote{
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+  color: white;
+  font-size: 15px;
+  font-family: 'Courgette', cursive;
 }
 .search{
     justify-content: center;
     align-content: center;
     margin: auto;
 
+}
+.search input{
+  height: 30px;
+  width: 700px;
+}
+.button{
+  font-size: 21px;
+}
+.button:active{
+  transform: translateY(4px);
+}
+
+.signup {
+padding: 0.05px;
+display:block;
+background-color: white;
+color: white;
+text-align:center;
+position: absolute;
+top: 5px;
+right: 5px;
+}
+
+img{
+  height: 60px;
+  width: 300px;
 }
