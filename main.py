@@ -15,7 +15,7 @@ jinja_env = jinja2.Environment(
 
 
 
-class WalmartApi(webapp2.RequestHandler):
+class ApiHandler(webapp2.RequestHandler):
     def get(self):
         home_template = jinja_env.get_template('index.html')
         call_walmart_api = requests.get('http://api.walmartlabs.com/v1/search?apiKey=t29nkcuug33kqst5r2b53d9z&query=ipod')
@@ -24,9 +24,15 @@ class WalmartApi(webapp2.RequestHandler):
         
         walmart_item_api = requests.get('http://api.walmartlabs.com/v1/items?apiKey=t29nkcuug33kqst5r2b53d9z&upc=%s' % (walmart_upc))
         walmart_item_json = walmart_item_api.json()
-        self.response.write(walmart_item_json) 
+         
+
+        ebay_item_api = requests.get('http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByProduct&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=ScottMos-Comparif-PRD-1ed499e41-3b97c9fb&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&paginationInput.entriesPerPage=2&productId.@type=UPC&productId=%s' % (walmart_upc))
+        ebay_item_json = ebay_item_api.json()
+        self.response.write(ebay_item_json)
+
+        
 
 app = webapp2.WSGIApplication([
-    ('/', WalmartApi)
+    ('/', ApiHandler)
    
 ], debug=True)
