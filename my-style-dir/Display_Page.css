@@ -1,6 +1,7 @@
 .container {
   display: flex;
   flex-flow: column wrap;
+  align-content: center;
 }
 body {
   margin: 40px;
@@ -13,6 +14,10 @@ body {
   grid-gap: 20px;
   background-color: #fff;
   color: #444;
+  align-content: center;
+  top: 10%;
+
+
 }
 
 .box {
