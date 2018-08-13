@@ -46,3 +46,60 @@ body {
     background-color: blue;
     color: white;
 }
+
+.active{
+  font-family: 'Libre Barcode 39 Extended Text', cursive;
+}
+
+.home_button a {
+  font-size: 30px;
+}
+
+.search{
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    text-align:center;
+    position: absolute;
+    top: 50px;
+    right: 15px;
+    left: 10px;
+
+
+}
+form{
+  display: flex;
+  align-items: center;
+}
+.search input{
+  height: 30px;
+  width: 500px;
+}
+.button{
+  border: none;
+  padding: 9.5px;
+
+}
+/* .button:hover{
+  background-color: #71CC14;
+} */
+
+  .signup {
+  padding: 0.05px;
+  display:block;
+
+  color: white;
+  text-align:center;
+  position: absolute;
+  top: 50px;
+  right: 45px;
+  }
+
+  .sign-up, .log-in{
+    padding: 10px;
+    margin-right: 10px;
+    color: white;
+    border-radius: 100px;
+    border: none;
+    background-color: #71CC14
+  }
