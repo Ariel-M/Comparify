@@ -103,17 +103,19 @@ form{
 
   .wrapper {
   display: grid;
-  grid-template-columns: 500px 500px 500px;
-  grid-template-rows: 500px 500px 500px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 500px 500px;
   grid-gap: 10px;
   background-color: #fff;
   color: #444;
+
 }
 
 .box {
-  background-color: #444;
+  background-color: #abb0d5;
   color: #fff;
   border-radius: 5px;
-  padding: 20px;
+  padding: 200px;
   font-size: 150%;
+
 }
