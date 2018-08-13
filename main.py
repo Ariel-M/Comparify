@@ -17,9 +17,13 @@ jinja_env = jinja2.Environment(
 
 class ApiHandler(webapp2.RequestHandler):
     def get(self):
-        home_template = jinja_env.get_template('index.html')
+        home_template = jinja_env.get_template('Templates/index.html')
+        self.response.write(home_template.render())
+
+    def post(self):
+        search = self.request.get('query')
         # Searches Walmart's database for the query entered by the user 
-        call_walmart_api = requests.get('http://api.walmartlabs.com/v1/search?apiKey=t29nkcuug33kqst5r2b53d9z&query=ipod')
+        call_walmart_api = requests.get('http://api.walmartlabs.com/v1/search?apiKey=t29nkcuug33kqst5r2b53d9z&query=%s' % (search))
         walmart_json = call_walmart_api.json()
 
         # sets the variable to the first item that comes up's upc number

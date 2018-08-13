@@ -2,9 +2,16 @@ runtime: python27
 api_version: 1
 threadsafe: true
 
+
+  
+   
 handlers:
-- url: /.*
+- url: /my-style-dir
+  static_dir: my-style-dir
+
+- url: .*
   script: main.app
+
 
 libraries:
 - name: webapp2
