@@ -26,7 +26,7 @@ body{
     justify-content: center;
     align-content: center;
     margin: auto;
-    
+
 
 }
 form{
@@ -40,11 +40,11 @@ form{
 .button{
   border: none;
   padding: 9.5px;
-  
+
 }
 .button:hover{
   background-color: #71CC14;
-  
+
 }
 
 .signup {
