@@ -3,6 +3,7 @@ import jinja2
 import webapp2
 import requests
 import requests_toolbelt.adapters.appengine
+from models import SearchTerms
 
 requests_toolbelt.adapters.appengine.monkeypatch()
 
@@ -22,6 +23,39 @@ class ApiHandler(webapp2.RequestHandler):
 
     def post(self):
         search = self.request.get('query')
+        popular_search = 0
+        
+        record = None
+        entry_exists = False
+        
+        for entry in SearchTerms.query().order(SearchTerms.search_term).fetch():
+            self.response.write(search)
+            self.response.write('<br>')
+            self.response.write(entry)
+            self.response.write('<br>')
+            self.response.write(entry.search_term)
+            self.response.write('<br><br>')
+            if search == entry.search_term:
+                self.response.write("b")
+                entry.search_frequency += 1
+                entry.put()
+                
+                entry_exists = True
+                record = entry
+                break
+        
+            else:
+                search_entry = SearchTerms(search_term = search, search_frequency = popular_search)
+                search_entry.put()
+                self.response.write("d")  
+                break
+              
+            
+                   
+                
+                
+
+
         # Searches Walmart's database for the query entered by the user 
         call_walmart_api = requests.get('http://api.walmartlabs.com/v1/search?apiKey=t29nkcuug33kqst5r2b53d9z&query=%s' % (search))
         walmart_json = call_walmart_api.json()
@@ -36,7 +70,8 @@ class ApiHandler(webapp2.RequestHandler):
         # finds product information from ebay's database using the upc code from Walmart
         ebay_item_api = requests.get('http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByProduct&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=ScottMos-Comparif-PRD-1ed499e41-3b97c9fb&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&paginationInput.entriesPerPage=2&productId.@type=UPC&productId=%s' % (walmart_upc))
         ebay_item_json = ebay_item_api.json()
-        self.response.write(ebay_item_json)
+        # self.response.write(ebay_item_json)
+        
 
         
 
