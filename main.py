@@ -29,14 +29,8 @@ class ApiHandler(webapp2.RequestHandler):
         entry_exists = False
         
         for entry in SearchTerms.query().order(SearchTerms.search_term).fetch():
-            self.response.write(search)
-            self.response.write('<br>')
-            self.response.write(entry)
-            self.response.write('<br>')
-            self.response.write(entry.search_term)
-            self.response.write('<br><br>')
             if search == entry.search_term:
-                self.response.write("b")
+                
                 entry.search_frequency += 1
                 entry.put()
                 
@@ -47,7 +41,6 @@ class ApiHandler(webapp2.RequestHandler):
             else:
                 search_entry = SearchTerms(search_term = search, search_frequency = popular_search)
                 search_entry.put()
-                self.response.write("d")  
                 break
               
             
