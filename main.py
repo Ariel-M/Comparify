@@ -4,6 +4,7 @@ import webapp2
 import requests
 import requests_toolbelt.adapters.appengine
 from models import SearchTerms
+import logging
 
 requests_toolbelt.adapters.appengine.monkeypatch()
 
@@ -22,6 +23,7 @@ class ApiHandler(webapp2.RequestHandler):
         self.response.write(home_template.render())
 
     def post(self):
+        result_template = jinja_env.get_template('Templates/Display_Page.html')
         search = self.request.get('query')
         popular_search = 0
         
@@ -59,13 +61,19 @@ class ApiHandler(webapp2.RequestHandler):
         # finds the product information 
         walmart_item_api = requests.get('http://api.walmartlabs.com/v1/items?apiKey=t29nkcuug33kqst5r2b53d9z&upc=%s' % (walmart_upc))
         walmart_item_json = walmart_item_api.json()
+       
+        # self.response.write()
          
         # finds product information from ebay's database using the upc code from Walmart
         ebay_item_api = requests.get('http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByProduct&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=ScottMos-Comparif-PRD-1ed499e41-3b97c9fb&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&paginationInput.entriesPerPage=2&productId.@type=UPC&productId=%s' % (walmart_upc))
         ebay_item_json = ebay_item_api.json()
         # self.response.write(ebay_item_json)
-        
 
+        template_dict = {'description': walmart_item_json[u'items'][0][u'shortDescription'], 'image':
+        walmart_json[u'items'][0][u'imageEntities'][0][u'largeImage'], 'price': walmart_item_json[u'items'][0][u'salePrice'], 'name': walmart_item_json[u'items'][0][u'name'], 
+        }
+        self.response.write(result_template.render(template_dict))
+       
         
 
 app = webapp2.WSGIApplication([
