@@ -39,6 +39,7 @@ body {
 .navigation a:hover {
     background-color: #ddd;
     color: black;
+
 }
 
 .navigation a.active {
