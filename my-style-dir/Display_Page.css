@@ -18,6 +18,9 @@ body {
 
 .navigation {
     background-color: #333;
+<<<<<<< HEAD
+    overflow: hidden;
+=======
     
     margin: 0;
     padding: 0;
@@ -25,6 +28,7 @@ body {
     height:60px;
     margin-bottom: 40px;
 
+>>>>>>> 6819e06cb604002b38088167d904ba1c9d467882
 }
 
 .navigation a {
@@ -39,7 +43,6 @@ body {
 .navigation a:hover {
     background-color: #ddd;
     color: black;
-
 }
 
 .navigation a.active {

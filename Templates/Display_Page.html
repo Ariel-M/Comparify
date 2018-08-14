@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
+
 <head>
   <meta charset="utf-8">
   <title>Results Page</title>
@@ -34,37 +35,46 @@
 
 
 
+
+  <head>
+    <meta charset="utf-8">
+    <title>Results Page</title>
+    <link rel="stylesheet" href="../my-style-dir/Display_Page.css">
+      <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Extended+Text" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="navigation">
+      <div class="home_button">
+  <a class="active" href="#home">COMPARIFY</a>
+
   </div>
-  <div class="wrapper">
-    <div class="box a">
-      <img src={{image}} alt="">
-      <div class="name">
-        <h1>{{Name}}</h1>
-      </div>
-      <div class="description">
-        <h1>{{descriptsion}}</h1>
-      </div>
-      <div class="price">
-        <h1>{{price}}</h1>
-      </div>
-      <button>Buy Now</button>
+  <a href="#explore">Explore</a>
+  <a href="#about">About</a>
+
+  <form method='post' action='/'>
+  <div class="search">
+      <input type="text" placeholder="Search..." name="query" align = "top">
+      <button class="button" type="submit"><i class="fas fa-search"></i></button>
+    </br>
     </div>
-    <div class="box b">
-      <img src={{image}} alt="">
-      <div class="name">
-        <h1>{{Name}}</h1>
-      </div>
-      <div class="description">
-        <h1>{{descriptsion}}</h1>
-      </div>
-      <div class="price">
-        <h1>{{price}}</h1>
-      </div>
-      <button>Buy Now</button>
+    </form>
+    <div class="signup">
+      <button class="sign-up">Sign Up</button>
+      <button class = 'log-in'>Login</button>
     </div>
-  </div>
+</div>
+</div>
+
+</div>
+<div class="wrapper">
+  <div class="box a"></div>
+  <div class="box b"></div>
+</div>
 
 
-</body>
+
+
+  </body>
 
 </html>
