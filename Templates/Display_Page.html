@@ -1,40 +1,77 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Results Page</title>
-    <link rel="stylesheet" href="../my-style-dir/Display_Page.css">
-      <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Extended+Text" rel="stylesheet">
-  </head>
-  <body>
 
-    <div class="navigation">
-      <div class="home_button">
-  <a class="active" href="#home">COMPARIFY</a>
+<head>
+  <meta charset="utf-8">
+  <title>Results Page</title>
+  <link rel="stylesheet" href="../my-style-dir/Display_Page.css">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Extended+Text" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <div class="navigation">
+    <div class="home_button">
+      <a class="active" href="index.html">COMPARIFY</a>
+
+      <form method='post' action='/'>
+        <div class="search">
+          <input type="text" placeholder="Search..." name="query" align="top">
+          <button class="button" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+          </br>
+        </div>
+      </form>
+      <div class="signup">
+        <button class="sign-up">Sign Up</button>
+        <button class='log-in'>Login</button>
+      </div>
+    </div>
+
+
+    
+
   </div>
-  <a href="#explore">Explore</a>
-  <a href="#about">About</a>
-
-  <form method='post' action='/'>
-  <div class="search">
-      <input type="text" placeholder="Search..." name="query" align = "top">
-      <button class="button" type="submit"><i class="fas fa-search"></i></button>
-    </br>
+  <div class="wrapper">
+    <div class="box a">
+      <img src={{image}} alt="">
+      <div class="name">
+        <h1>{{Name}}</h1>
+      </div>
+      <div class="description">
+        <h1>{{descriptsion}}</h1>
+      </div>
+      <div class="price">
+        <h1>{{price}}</h1>
+      </div>
+      <button>Buy Now</button>
     </div>
-    </form>
-    <div class="signup">
-      <button class="sign-up">Sign Up</button>
-      <button class = 'log-in'>Login</button>
+    <div class="box b">
+      <img src={{image}} alt="">
+      <div class="name">
+        <h1>{{Name}}</h1>
+      </div>
+      <div class="description">
+        <h1>{{descriptsion}}</h1>
+      </div>
+      <div class="price">
+        <h1>{{price}}</h1>
+      </div>
+      <button>Buy Now</button>
     </div>
-</div>
-</div>
+  </div>
 
+<<<<<<< HEAD
 </div>
 <div class="wrapper">
   <div class="box a"></div>
   <div class="box b"></div>
 </div>
+=======
+>>>>>>> 6819e06cb604002b38088167d904ba1c9d467882
 
+</body>
 
-  </body>
 </html>
