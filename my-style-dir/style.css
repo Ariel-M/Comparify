@@ -66,3 +66,33 @@ right: 5px;
   border: none;
   background-color: #71CC14
 }
+.box{
+  padding:  15px;
+  border-top: 5px solid lightblue;
+  border-radius: 5px;
+  border-bottom: 5px solid lightblue;
+  border-left: 5px solid lightblue;
+  border-right: 5px solid lightblue;
+  margin: 33px;
+  font-family: 'Courgette', cursive;
+  color: white;
+  box-sizing: border-box;
+  width: 86%;
+  height: 25%;
+}
+.wrapper {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
+        background-color: solid blue;
+        color: solid blue;
+    }
+
+    .gridbox {
+        background-color: solid blue;
+        color: solid blue;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: 150%;
+
+    }
