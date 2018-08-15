@@ -120,10 +120,10 @@ form{
   background-color: #abb0d5;
   color: #fff;
   border-radius: 5px;
-  padding: 20px;
+  padding: 10px;
   font-size: 150%;
   text-align: center;
-
+  height: 600px;
 }
 
 .hightlight{
