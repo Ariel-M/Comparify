@@ -70,24 +70,18 @@ class ApiHandler(webapp2.RequestHandler):
         # self.response.write(ebay_item_json)
 
         template_dict = {'description': walmart_item_json[u'items'][0][u'shortDescription'], 'image':
-<<<<<<< HEAD
-        walmart_json[u'items'][0][u'imageEntities'][0][u'thumbnailImage'], 'price': walmart_item_json[u'items'][0][u'salePrice'], 'name': walmart_item_json[u'items'][0][u'name'],
-=======
         walmart_json[u'items'][0][u'imageEntities'][0][u'mediumImage'], 'price': walmart_item_json[u'items'][0][u'salePrice'], 'name': walmart_item_json[u'items'][0][u'name'], 'ebay_name':ebay_item_json[u'findItemsByProductResponse'][0][u'searchResult'][0][u'item'][0][u'title'][0], 'ebay_image': ebay_item_json[u'findItemsByProductResponse'][0][u'searchResult'][0][u'item'][0][u'galleryURL'][0], 'ebay_price': ebay_item_json[u'findItemsByProductResponse'][0][u'searchResult'][0][u'item'][0][u'sellingStatus'][0][u'currentPrice'][0][u'__value__']
->>>>>>> 5670d95f7ea116b204923460a052949341f41d34
+
         }
         self.response.write(result_template.render(template_dict))
 
 
 
 app = webapp2.WSGIApplication([
-<<<<<<< HEAD
-    ('/', ApiHandler)
 
-], debug=True)
-=======
+
     ('/', ApiHandler),
     ('/home', ApiHandler)
    
 ], debug=True)
->>>>>>> 5670d95f7ea116b204923460a052949341f41d34
+

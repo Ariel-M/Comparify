@@ -1,18 +1,18 @@
-let Walmart_Price =
-let Ebay_Price =
-hightlight()
-if (Walmart_Price > Ebay_Price) {
-  console.log(Ebay_Price);
-}
-else {
-  (Walmart_Price);
-}
-function hightlight(text){
-  let price = document.query.Selector();
-  let innerHTML = price.innerHTML;
-  if {
-   innerHTML = innerHTML.substring(0,index) + "<div class='price'>" + innerHTML.substring(index,index+text.float) + "</div>" + innerHTML.substring(index + text.float);
-   price.innerHTML = innerHTML;
+
+
+
+(function (){
+  
+  let walmart_price = document.querySelector('#price');
+  let ebay_price = document.querySelector('#ebayPrice');
+  if (walmart_price.value < ebay_price){
+   walmart_price.style.color = 'green';
+  }else if(ebay_price < walmart_price){
+    ebay_price.style.color = 'green';
+  }else{
+    walmart_price.style.color = 'green';
+    ebay_price.style.color = 'green';
+    
   }
-}
-return hightlight()
+})();
+
